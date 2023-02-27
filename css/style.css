@@ -22,3 +22,18 @@
 
     padding: 3px;
 }
+
+/* -----------------------
+SECONDO ESERCIZIO
+-------------------------- */
+
+#containerDice {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 30px;
+
+    padding: 4em 2em;
+    background-color: #5b5b5b;    
+}

@@ -117,20 +117,39 @@ rollDiceEl.addEventListener('click', function () {
     let diceUser = (Math.random() * 6).toFixed(0);
     let dicePc = (Math.random() * 6).toFixed(0);
 
-    console.log (diceUser);
-    console.log (dicePc);
+    let outComeEl = document.getElementById('outCome')
+    let diceResultUserEl = document.getElementById('diceResultUser')
+    let diceResultPcEl = document.getElementById('diceResultPc')
+
+
+    // console.log (diceUser);
+    // console.log (dicePc);
     
     if (diceUser > dicePc) {
 
-        console.log("vittoria")
+        // console.log("vittoria")
+
+        outComeEl.innerHTML = "vittoria"
+        diceResultUserEl.innerHTML = "il tuo dado: " + diceUser;
+        diceResultPcEl.innerHTML = "il dado del pc: " + dicePc;
+
 
     } else if (diceUser == dicePc) {
 
-        console.log("pareggio")
+        // console.log("pareggio")
+
+        outComeEl.innerHTML = "pareggio"
+        diceResultUserEl.innerHTML = "il tuo dado: " + diceUser;
+        diceResultPcEl.innerHTML = "il dado del pc: " + dicePc;
+        
 
     } else {
 
-        console.log("sconfitta")
+        // console.log("sconfitta")
+
+        outComeEl.innerHTML = "sconfitta"
+        diceResultUserEl.innerHTML = "il tuo dado: " + diceUser;
+        diceResultPcEl.innerHTML = "il dado del pc: " + dicePc;
 
     }
 })
