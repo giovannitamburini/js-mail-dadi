@@ -111,7 +111,7 @@ let rollDiceEl = document.getElementById('rollDice')
 let rollUserEl = document.getElementById('rollUser')
 let rollPcEl = document.getElementById('rollPc')
 
-let dices = ["https://e7.pngegg.com/pngimages/425/86/png-clipart-dice-game-kismet-four-sided-die-dice-1-angle-face.png",
+let dices = ["https://icon2.cleanpng.com/20180413/blq/kisspng-yahtzee-one-dice-3d-free-playing-die-set-clip-art-dice-5ad07fe8545d11.4008243615236136723456.jpg",
              "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Dice-2-b.svg/2048px-Dice-2-b.svg.png",
              "https://www.pinclipart.com/picdir/middle/115-1154873_original-file-face-of-dice-3-clipart.png",
              "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Dice-4-b.svg/557px-Dice-4-b.svg.png",
@@ -133,7 +133,19 @@ rollDiceEl.addEventListener('click', function () {
 
     // console.log (diceUser);
     // console.log (dicePc);
+    
+    //condizioni se l'arrotondamento di Fixed porta come risultato lo 0
+    if (diceUser == 0) {
 
+        diceUser = 1;
+    }
+
+    if (dicePc == 0) {
+
+        dicePc = 1; 
+    }
+
+    //
     let dadoUser = dices [diceUser - 1];
     let dadoPc = dices [dicePc - 1];
     
@@ -144,19 +156,22 @@ rollDiceEl.addEventListener('click', function () {
         // risultato scritto
         outComeEl.innerHTML = "vittoria"
 
-        diceResultUserEl.innerHTML = "il tuo dado: " + diceUser;
-        diceResultPcEl.innerHTML = "il dado del pc: " + dicePc;
+        diceResultUserEl.innerHTML = "il tuo dado: " + diceUser + " ";
+        diceResultPcEl.innerHTML = "il dado del pc: " + dicePc + " ";
 
+        //creazione elemento immagine dado user
         let diceImgUser = document.createElement("img");
         diceImgUser.src = dadoUser;
         diceResultUserEl.appendChild(diceImgUser);
-        diceImgUser.style.width = "30px";
+        diceImgUser.style.width = "40px";
 
+        //creazione elemento immagine dado pc
         let diceImgPc = document.createElement("img");
         diceImgPc.src = dadoPc;
         diceResultPcEl.appendChild(diceImgPc);
-        diceImgPc.style.width = "30px";
+        diceImgPc.style.width = "40px";
 
+        // style
         outComeEl.style.backgroundColor = "green"
         outComeEl.style.color = "white";
 
@@ -165,19 +180,22 @@ rollDiceEl.addEventListener('click', function () {
         // console.log("pareggio")
 
         outComeEl.innerHTML = "pareggio"
-        diceResultUserEl.innerHTML = "il tuo dado: " + diceUser;
-        diceResultPcEl.innerHTML = "il dado del pc: " + dicePc;
-
+        diceResultUserEl.innerHTML = "il tuo dado: " + diceUser + " ";
+        diceResultPcEl.innerHTML = "il dado del pc: " + dicePc + " ";
+        
+        //creazione elemento immagine dado user
         let diceImgUser = document.createElement("img");
         diceImgUser.src = dadoUser;
         diceResultUserEl.appendChild(diceImgUser);
-        diceImgUser.style.width = "30px";
+        diceImgUser.style.width = "40px";
 
+        //creazione elemento immagine dado pc
         let diceImgPc = document.createElement("img");
         diceImgPc.src = dadoPc;
         diceResultPcEl.appendChild(diceImgPc);
-        diceImgPc.style.width = "30px";
+        diceImgPc.style.width = "40px";
 
+        // style
         outComeEl.style.backgroundColor = "#2b2b2b";
         outComeEl.style.color = "white";
 
@@ -186,19 +204,22 @@ rollDiceEl.addEventListener('click', function () {
         // console.log("sconfitta")
 
         outComeEl.innerHTML = "sconfitta"
-        diceResultUserEl.innerHTML = "il tuo dado: " + diceUser;
-        diceResultPcEl.innerHTML = "il dado del pc: " + dicePc;
+        diceResultUserEl.innerHTML = "il tuo dado: " + diceUser + " ";
+        diceResultPcEl.innerHTML = "il dado del pc: " + dicePc + " ";
 
+        //creazione elemento immagine dado user
         let diceImgUser = document.createElement("img");
         diceImgUser.src = dadoUser;
         diceResultUserEl.appendChild(diceImgUser);
-        diceImgUser.style.width = "30px";
+        diceImgUser.style.width = "40px";
 
+        //creazione elemento immagine dado pc
         let diceImgPc = document.createElement("img");
         diceImgPc.src = dadoPc;
         diceResultPcEl.appendChild(diceImgPc);
-        diceImgPc.style.width = "30px";
+        diceImgPc.style.width = "40px";
 
+        // style
         outComeEl.style.backgroundColor = "red"
         outComeEl.style.color = "white";
 
