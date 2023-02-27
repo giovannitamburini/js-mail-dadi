@@ -12,6 +12,12 @@ Che ci sia un array da qualche parte?
 Se dobbiamo confrontare qualcosa che "cosa" ci serve?
 */
 
+/*
+-------------------------------------------------
+ESERCIZIO 1
+-----------------------------------------------
+*/
+
 // PSEUDO CODICE MAIL
 /*
 - creo una lista in cui inserisco le mail autorizzate
@@ -44,6 +50,8 @@ let inputEmailEl = document.getElementById ('inputEmail');
 //dichiaro la variabile dell'elemento button del DOM
 let accessButtonEl = document.getElementById ('accessButton');
 
+let loginEl = document.getElementById ('login')
+
 //creo un evento click nel bottone
 
 accessButtonEl.addEventListener('click', function() {
@@ -57,15 +65,74 @@ accessButtonEl.addEventListener('click', function() {
         //condizione in cui la mail non corrisponde quando è arrivato l'ultimo giro
         if (emails [i] !== inputEmailEl.value && i === emails.length - 1) {
 
-            console.log ("false");
+            // console.log ("false");
+
+            loginEl.innerHTML = "accesso negato"
+
+            //style
+            loginEl.style.backgroundColor= "red"
+            loginEl.style.borderRadius= "3px";
+            loginEl.style.transition= "0.3s"
+
         }
 
         //condizione in cui c'è riscontro
         if (emails [i] === inputEmailEl.value) {
 
-            console.log ("true");
+            // console.log ("true");
+
+            loginEl.innerHTML = "accesso consentito"
+
+            //style
+            loginEl.style.backgroundColor= "green"
+            loginEl.style.borderRadius= "3px";
+            loginEl.style.transition= "0.3s"
 
             break;
         }
     }
 })
+
+
+/*
+------------------------------------------
+ESERCIZIO 2
+------------------------------------------
+
+Gioco dei dadi
+Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
+Stabilire il vincitore, in base a chi fa il punteggio più alto.
+Prima di partire a scrivere codice poniamoci qualche domanda:
+Che ci sia un array da qualche parte?
+Se dobbiamo confrontare qualcosa che "cosa" ci serve? 
+*/
+
+let rollDiceEl = document.getElementById('rollDice')
+let rollUserEl = document.getElementById('rollUser')
+let rollPcEl = document.getElementById('rollPc')
+
+
+rollDiceEl.addEventListener('click', function () {
+
+    let diceUser = (Math.random() * 6).toFixed(0);
+    let dicePc = (Math.random() * 6).toFixed(0);
+
+    console.log (diceUser);
+    console.log (dicePc);
+    
+    if (diceUser > dicePc) {
+
+        console.log("vittoria")
+
+    } else if (diceUser == dicePc) {
+
+        console.log("pareggio")
+
+    } else {
+
+        console.log("sconfitta")
+
+    }
+})
+
+
