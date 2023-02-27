@@ -111,28 +111,54 @@ let rollDiceEl = document.getElementById('rollDice')
 let rollUserEl = document.getElementById('rollUser')
 let rollPcEl = document.getElementById('rollPc')
 
+let dices = ["https://e7.pngegg.com/pngimages/425/86/png-clipart-dice-game-kismet-four-sided-die-dice-1-angle-face.png",
+             "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Dice-2-b.svg/2048px-Dice-2-b.svg.png",
+             "https://www.pinclipart.com/picdir/middle/115-1154873_original-file-face-of-dice-3-clipart.png",
+             "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Dice-4-b.svg/557px-Dice-4-b.svg.png",
+             "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Dice-5-b.svg/2048px-Dice-5-b.svg.png",
+             "https://www.clipartmax.com/png/small/91-911089_open-dice-6-png.png"
+            ];
+
+
 
 rollDiceEl.addEventListener('click', function () {
 
     let diceUser = (Math.random() * 6).toFixed(0);
     let dicePc = (Math.random() * 6).toFixed(0);
 
-    let outComeEl = document.getElementById('outCome')
-    let diceResultUserEl = document.getElementById('diceResultUser')
-    let diceResultPcEl = document.getElementById('diceResultPc')
+    let outComeEl = document.getElementById('outCome');
+    let diceResultUserEl = document.getElementById('diceResultUser');
+    let diceResultPcEl = document.getElementById('diceResultPc');
 
 
     // console.log (diceUser);
     // console.log (dicePc);
+
+    let dadoUser = dices [diceUser - 1];
+    let dadoPc = dices [dicePc - 1];
     
     if (diceUser > dicePc) {
 
         // console.log("vittoria")
 
+        // risultato scritto
         outComeEl.innerHTML = "vittoria"
+
         diceResultUserEl.innerHTML = "il tuo dado: " + diceUser;
         diceResultPcEl.innerHTML = "il dado del pc: " + dicePc;
 
+        let diceImgUser = document.createElement("img");
+        diceImgUser.src = dadoUser;
+        diceResultUserEl.appendChild(diceImgUser);
+        diceImgUser.style.width = "30px";
+
+        let diceImgPc = document.createElement("img");
+        diceImgPc.src = dadoPc;
+        diceResultPcEl.appendChild(diceImgPc);
+        diceImgPc.style.width = "30px";
+
+        outComeEl.style.backgroundColor = "green"
+        outComeEl.style.color = "white";
 
     } else if (diceUser == dicePc) {
 
@@ -141,7 +167,19 @@ rollDiceEl.addEventListener('click', function () {
         outComeEl.innerHTML = "pareggio"
         diceResultUserEl.innerHTML = "il tuo dado: " + diceUser;
         diceResultPcEl.innerHTML = "il dado del pc: " + dicePc;
-        
+
+        let diceImgUser = document.createElement("img");
+        diceImgUser.src = dadoUser;
+        diceResultUserEl.appendChild(diceImgUser);
+        diceImgUser.style.width = "30px";
+
+        let diceImgPc = document.createElement("img");
+        diceImgPc.src = dadoPc;
+        diceResultPcEl.appendChild(diceImgPc);
+        diceImgPc.style.width = "30px";
+
+        outComeEl.style.backgroundColor = "#2b2b2b";
+        outComeEl.style.color = "white";
 
     } else {
 
@@ -150,6 +188,19 @@ rollDiceEl.addEventListener('click', function () {
         outComeEl.innerHTML = "sconfitta"
         diceResultUserEl.innerHTML = "il tuo dado: " + diceUser;
         diceResultPcEl.innerHTML = "il dado del pc: " + dicePc;
+
+        let diceImgUser = document.createElement("img");
+        diceImgUser.src = dadoUser;
+        diceResultUserEl.appendChild(diceImgUser);
+        diceImgUser.style.width = "30px";
+
+        let diceImgPc = document.createElement("img");
+        diceImgPc.src = dadoPc;
+        diceResultPcEl.appendChild(diceImgPc);
+        diceImgPc.style.width = "30px";
+
+        outComeEl.style.backgroundColor = "red"
+        outComeEl.style.color = "white";
 
     }
 })

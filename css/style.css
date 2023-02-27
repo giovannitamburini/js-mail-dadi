@@ -37,3 +37,15 @@ SECONDO ESERCIZIO
     padding: 4em 2em;
     background-color: #5b5b5b;    
 }
+
+#containerDice button {
+
+    padding:0.5em 1em;
+    border: 1.5px solid black;
+    border-radius: 5px;
+}
+
+#containerDice div {
+    padding: 1em;
+    border-radius: 1em;
+}
