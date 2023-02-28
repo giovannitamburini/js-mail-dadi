@@ -36,13 +36,25 @@ ESERCIZIO 1
     ° visualizzo nell'html un messaggio personalizzato
     */
 
+/*
+PSEUDO CODICE DI GABRIEL
+
+-preparare una lista di email di registrazione
+-preparare una variabile sentinella inizzializzata in "falso"
+-prendere la mail da un campo di testo alla pressione del pulsante
+-per ogni elemento nella lista di email
+  ? SE la mail inserita è uguaele alla mail a cui siamo arrivati
+   - ALLORA modifica la variabile sentinella in "vero"
+  ? SE la variabile sentinella è "vero"
+   -ALLORA scrivi in pagina "trovata"
+  : altrimenti
+   - scrivi in pagina "non trovata"
+
+*/
+
 
 //creo una lista array
 let emails = [ "worker1@gmail.com" , "worker2@gmail.com" , "worker3@gmail.com" , "worker4@gmail.com" , "worker5@gmail.com" ];
-
-// console.log (emails);
-
-// console.log (emails [1] );
 
 //dichiaro la variabile dell'elemento input del DOM
 let inputEmailEl = document.getElementById ('inputEmail');
@@ -53,19 +65,13 @@ let accessButtonEl = document.getElementById ('accessButton');
 let loginEl = document.getElementById ('login')
 
 //creo un evento click nel bottone
-
 accessButtonEl.addEventListener('click', function() {
-
-    //stampo in console il valore dell'input
-    // console.log (inputEmailEl.value);
 
     //creo un ciclo per il controllo del valore di input e la lista
     for (let i = 0; i < emails.length; i++) {
 
         //condizione in cui la mail non corrisponde quando è arrivato l'ultimo giro
         if (emails [i] !== inputEmailEl.value && i === emails.length - 1) {
-
-            // console.log ("false");
 
             loginEl.innerHTML = "accesso negato"
 
@@ -78,8 +84,6 @@ accessButtonEl.addEventListener('click', function() {
 
         //condizione in cui c'è riscontro
         if (emails [i] === inputEmailEl.value) {
-
-            // console.log ("true");
 
             loginEl.innerHTML = "accesso consentito"
 
@@ -107,6 +111,19 @@ Che ci sia un array da qualche parte?
 Se dobbiamo confrontare qualcosa che "cosa" ci serve? 
 */
 
+/*
+PSEUDO CODICE GABRIEL
+-mi preparo un array di immagini di dati
+-genero un numero random da 1 a 6 per l'utente
+-genero un numero random da 1 a 6 per il computer
+? SE il numero dell'utente è maggiore del numero del computer
+  ° stampo "hai vinto"
+: ALTRIMENTI
+  °stampo "hai perso"
+-mostro l'immagine del dado 1 corrispondente all'indice scelto -1
+-mostro l'immagine del dado 2 corrispondente all'indice scelto -1
+*/
+
 let rollDiceEl = document.getElementById('rollDice')
 let rollUserEl = document.getElementById('rollUser')
 let rollPcEl = document.getElementById('rollPc')
@@ -129,10 +146,6 @@ rollDiceEl.addEventListener('click', function () {
     let outComeEl = document.getElementById('outCome');
     let diceResultUserEl = document.getElementById('diceResultUser');
     let diceResultPcEl = document.getElementById('diceResultPc');
-
-
-    // console.log (diceUser);
-    // console.log (dicePc);
     
     //condizioni se l'arrotondamento di Fixed porta come risultato lo 0
     if (diceUser == 0) {
@@ -150,8 +163,6 @@ rollDiceEl.addEventListener('click', function () {
     let dadoPc = dices [dicePc - 1];
     
     if (diceUser > dicePc) {
-
-        // console.log("vittoria")
 
         // risultato scritto
         outComeEl.innerHTML = "vittoria"
@@ -177,8 +188,6 @@ rollDiceEl.addEventListener('click', function () {
 
     } else if (diceUser == dicePc) {
 
-        // console.log("pareggio")
-
         outComeEl.innerHTML = "pareggio"
         diceResultUserEl.innerHTML = "il tuo dado: " + diceUser + " ";
         diceResultPcEl.innerHTML = "il dado del pc: " + dicePc + " ";
@@ -200,8 +209,6 @@ rollDiceEl.addEventListener('click', function () {
         outComeEl.style.color = "white";
 
     } else {
-
-        // console.log("sconfitta")
 
         outComeEl.innerHTML = "sconfitta"
         diceResultUserEl.innerHTML = "il tuo dado: " + diceUser + " ";
